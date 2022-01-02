@@ -21,7 +21,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 async def remote_upload(bot, message):
     await message.reply_chat_action("typing")
     d = Mdisk(Config.API_KEY)
-    link = message.message
+    link = message.text
     if 'mypowerdisk.com/mybox' in link:
         upload = d.upload(link)
         url = upload
