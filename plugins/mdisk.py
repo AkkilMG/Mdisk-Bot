@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 from config import Config
 
-from doodstream import Doodstream
+from mdisk import Mdisk
 
 import pyrogram
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
