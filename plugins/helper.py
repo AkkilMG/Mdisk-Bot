@@ -25,10 +25,13 @@ For More Bots Join @HeimanSupports
 """
 
 HELP = """
-**Send Me Link From 
+**How To?**
+__➢ Send Me Link From https://mypowerdisk.com/mybox and upload link or video here.
+➢ Get Link after uploading in that site.
+➢ Now Paste that link in this bot__
 
-**NOTE:
-➢ Do Not Spam, Send Link One By One
+**NOTE:**
+__➢ Do Not Spam, Send Link One By One__
 
 """
 
@@ -47,6 +50,12 @@ HELP_BUTTONS = InlineKeyboardMarkup(
         InlineKeyboardButton('🛠️ Support 🛠️', url='https://telegram.dog/HeimanSupport/'),
         ],[
         InlineKeyboardButton('Home', callback_data='home'),
+        InlineKeyboardButton('Close', callback_data='close')
+        ]]
+    )
+
+CLOSE_BUTTONS = InlineKeyboardMarkup(
+        [[
         InlineKeyboardButton('Close', callback_data='close')
         ]]
     )
@@ -71,6 +80,7 @@ async def help(bot, message):
             disable_web_page_preview=True,
             reply_markup=HELP_BUTTONS
         )
+
 
 
 @Client.on_callback_query()
