@@ -1,6 +1,7 @@
 # (c) HeimanPictures
 
 import os
+import requests
 import logging
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -8,7 +9,8 @@ logger = logging.getLogger(__name__)
 
 from config import Config
 
-from mdisk import Mdisk
+#from mdisk import Mdisk
+
 
 import pyrogram
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
@@ -20,11 +22,16 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 @Client.on_message(filters.regex('http') & filters.private)
 async def remote_upload(bot, message):
     await message.reply_chat_action("typing")
-    d = Mdisk(Config.API_KEY)
+    
     link = message.text
-    if 'mypowerdisk.com/mybox' in link:
-        upload = d.upload(link)
-        url = upload
+    if ('mypowerdisk.com/mybox' in link) or ('mdisk.me' in link):
+        param = {'token':Config.API_KEY, 'link':str(link)} 
+        r = requests.post(url, json = param) 
+        response = r.json()
+        data = dict(response)
+        mdisk = data["sharelink"]
+        
+        url = mdisk
         await message.reply_text(
             text=f"**Video Link:** `{url}`\n\n This Code is made by @HeimanSupports.",
             reply_markup=InlineKeyboardMarkup(
