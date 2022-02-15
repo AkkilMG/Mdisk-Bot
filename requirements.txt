@@ -1,4 +1,4 @@
 pyrogram
 tgcrypto
 requests
-git+https://github.com/HeimanPictures/mdisk.git
+#git+https://github.com/HeimanPictures/mdisk.git
