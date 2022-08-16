@@ -64,7 +64,7 @@ CLOSE_BUTTONS = InlineKeyboardMarkup(
 
 @Client.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
-        await message.reply_chat_action("typing")
+        # await message.reply_chat_action("typing")
         await message.reply_text(
             text=START.format(message.from_user.mention),
             disable_web_page_preview=True,
@@ -74,7 +74,7 @@ async def start(bot, message):
 
 @Client.on_message(filters.command('help') & filters.private)
 async def help(bot, message):
-        await message.reply_chat_action("typing")
+        # await message.reply_chat_action("typing")
         await message.reply_text(
             text=HELP,
             disable_web_page_preview=True,
