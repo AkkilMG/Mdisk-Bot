@@ -26,7 +26,7 @@ async def remote_upload(bot, message):
     link = message.text
     if ('mypowerdisk.com/mybox' in link) or ('mdisk.me' in link):
         param = {'token':Config.API_KEY, 'link':str(link)} 
-        r = requests.post(url, json = param) 
+        r = requests.post(link, json = param) 
         response = r.json()
         data = dict(response)
         mdisk = data["sharelink"]
