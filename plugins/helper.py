@@ -26,9 +26,9 @@ For More Bots Join @HeimanSupports
 
 HELP = """
 **How To?**
-__➢ Send Me Link From https://mypowerdisk.com/mybox and upload link or video here.
-➢ Get Link after uploading in that site.
-➢ Now Paste that link in this bot__
+__➢ Send Me Link From https://mdisk.me
+➢ Now Paste that link in this bot
+➢ I will copy into your account and give you the link__
 
 **NOTE:**
 __➢ Do Not Spam, Send Link One By One__
